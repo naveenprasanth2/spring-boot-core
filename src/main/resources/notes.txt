@@ -1,0 +1,6 @@
+select * from course
+
+insert into course(id, name, author)
+values(2, 'naveena', 'in29mins')
+
+delete from course where name = 'naveena'
