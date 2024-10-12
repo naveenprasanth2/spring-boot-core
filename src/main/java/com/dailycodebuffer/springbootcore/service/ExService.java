@@ -1,5 +1,6 @@
 package com.dailycodebuffer.springbootcore.service;
 
+import com.dailycodebuffer.springbootcore.advice.BusinessException1;
 import com.dailycodebuffer.springbootcore.course.Course;
 import com.dailycodebuffer.springbootcore.exceptions.BusinessException;
 import com.dailycodebuffer.springbootcore.repository.ExRepository;
@@ -15,5 +16,9 @@ public class ExService {
     public Course getCourseById(long courseId) {
         return exRepository.findById(courseId)
                 .orElseThrow(() -> new BusinessException(601, "No such values with " + courseId + " found"));
+    }
+    public Course getCoursesById(long courseId) {
+        return exRepository.findById(courseId)
+                .orElseThrow(() -> new BusinessException1(601, "No such values with " + courseId + " found"));
     }
 }

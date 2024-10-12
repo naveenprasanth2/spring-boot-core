@@ -1,6 +1,5 @@
 package com.dailycodebuffer.springbootcore.controller;
 
-import com.dailycodebuffer.springbootcore.course.Course;
 import com.dailycodebuffer.springbootcore.exceptions.BusinessException;
 import com.dailycodebuffer.springbootcore.model.ErrorModel;
 import com.dailycodebuffer.springbootcore.service.ExService;
@@ -27,4 +26,11 @@ public class ExHandlingController {
             return new ResponseEntity<>(errorModel, HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/courses/{id}")
+    public ResponseEntity<?> getCoursesById(@PathVariable long id) {
+            return new ResponseEntity<>(exService.getCoursesById(id), HttpStatus.ACCEPTED);
+    }
+
+
 }
