@@ -31,6 +31,4 @@ public class ExHandlingController {
     public ResponseEntity<?> getCoursesById(@PathVariable long id) {
             return new ResponseEntity<>(exService.getCoursesById(id), HttpStatus.ACCEPTED);
     }
-
-
 }
