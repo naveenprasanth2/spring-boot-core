@@ -1,5 +1,6 @@
 package com.dailycodebuffer.springbootcore.dto;
 
+import com.dailycodebuffer.springbootcore.marker.PostValidation;
 import com.dailycodebuffer.springbootcore.validators.UniqueEmailValidator;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -18,7 +19,7 @@ public class CustomerDto {
     private String lastName;
     @Email(message = "Please enter a valid email name")
     @NotEmpty(message = "Please enter some value to the fields")
-    @UniqueEmailValidator(message = "Please enter a unique email")
+    @UniqueEmailValidator(message = "Please enter a unique email", groups = {PostValidation.class})
     private String email;
     @Positive(message = "Please enter a valid positive number")
     @Min(value = 6_000_000_000L, message = "Please enter a number above 6_000_000_000L")
