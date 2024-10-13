@@ -18,7 +18,7 @@ public class ExHandlingController {
     private final ExService exService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getCourseById(@PathVariable long id) {
+    public ResponseEntity<Object> getCourseById(@PathVariable long id) {
         try {
             return new ResponseEntity<>(exService.getCourseById(id), HttpStatus.ACCEPTED);
         } catch (BusinessException businessException) {
