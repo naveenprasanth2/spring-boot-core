@@ -1,5 +1,6 @@
-package com.dailycodebuffer.springbootcore.validators;
+package com.dailycodebuffer.springbootcore.validators.validations;
 
+import com.dailycodebuffer.springbootcore.validators.annotations.UniqueEmailValidator;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

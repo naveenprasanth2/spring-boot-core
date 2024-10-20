@@ -1,5 +1,6 @@
-package com.dailycodebuffer.springbootcore.validators;
+package com.dailycodebuffer.springbootcore.validators.annotations;
 
+import com.dailycodebuffer.springbootcore.validators.validations.UniqueNameValidation;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
@@ -10,9 +11,9 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = UniqueElementsValidation.class)
-public @interface UniqueEmailValidator {
-    String message() default "";
+@Constraint(validatedBy = UniqueNameValidation.class)
+public @interface UniqueNameValidator {
+    String message() default "Please enter a unique name";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

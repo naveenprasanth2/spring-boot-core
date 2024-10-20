@@ -1,7 +1,7 @@
 package com.dailycodebuffer.springbootcore.dto;
 
 import com.dailycodebuffer.springbootcore.marker.PostValidation;
-import com.dailycodebuffer.springbootcore.validators.UniqueEmailValidator;
+import com.dailycodebuffer.springbootcore.validators.annotations.UniqueEmailValidator;
 import jakarta.validation.constraints.*;
 import lombok.*;
 

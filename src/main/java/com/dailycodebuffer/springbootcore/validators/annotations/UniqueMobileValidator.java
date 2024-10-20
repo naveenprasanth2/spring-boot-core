@@ -1,5 +1,7 @@
-package com.dailycodebuffer.springbootcore.validators;
+package com.dailycodebuffer.springbootcore.validators.annotations;
 
+
+import com.dailycodebuffer.springbootcore.validators.validations.UniqueMobileValidation;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
@@ -10,9 +12,9 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = UniqueNameValidation.class)
-public @interface UniqueNameValidator {
-    String message() default "Please enter a unique name";
+@Constraint(validatedBy = UniqueMobileValidation.class)
+public @interface UniqueMobileValidator {
+    String message() default "Please enter a valid mobile number";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
